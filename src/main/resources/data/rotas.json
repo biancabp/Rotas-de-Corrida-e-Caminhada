@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nome": "Praia Vermelha",
+    "distancia": 5.2,
+    "dificuldade": "Fácil"
+  },
+  {
+    "id": 2,
+    "nome": "Parque da Cidade",
+    "distancia": 3.8,
+    "dificuldade": "Moderada"
+  }
+]
