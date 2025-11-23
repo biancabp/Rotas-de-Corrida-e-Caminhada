@@ -1,40 +1,55 @@
-# Suncityrun API
-# Suncityrun API
+# SunCity Run API
 
-API simples para listar rotas de corrida/caminhada.
+**API REST para rotas de corrida e caminhada em Natal/RN**  
+Projeto desenvolvido para a disciplina **IMD0040 – Linguagem de Programação II**  
+**Caminho A** – API robusta com foco em Backend  
+UFRN / Instituto Metrópole Digital – 2025.2
 
-Requisitos:
+**Alunas**  
+- Bianca Bezerra Pires – 20240020515  
+- Maria Clara Silva Brito – 2024002780
+
+---
+
+### Descrição do Projeto
+SunCity Run é uma API que centraliza informações de rotas reais de corrida e caminhada em Natal/RN, permitindo consulta por ID e (em breve) filtros por dificuldade, distância e segurança.
+
+### Tecnologias
 - Java 17
-- Maven (ou usar o Maven Wrapper `mvnw`)
+- Spring Boot 4.0.0
+- Maven
+- Springdoc OpenAPI (Swagger UI)
+- Persistência em arquivo JSON local (`src/main/resources/data/rotas.json`)
 
-Build e execução:
+### Estrutura de Camadas (já implementada)
+com.suncityrun
+├── model        → Rota.java
+├── repository   → RotaRepository.java (@Repository + @PostConstruct)
+├── service      → RotaService.java
+├── controller   → RouteController.java (@RestController /rotas)
+├── exception    → GlobalExceptionHandler.java (@ControllerAdvice)
+└── suncityrun_api → SuncityrunApiApplication.java
 
-```powershell
-cd "c:/Users/adlin/OneDrive/Desktop/prog bia/Rotas-de-Corrida-e-Caminhada"
-.\mvnw.cmd -B -DskipTests=false test
-.\mvnw.cmd -B package
-.\mvnw.cmd spring-boot:run
+### Como Executar
+```bash
+./mvnw spring-boot:run        # Linux/Mac
 # ou
-java -jar target/suncityrun-api-0.0.1-SNAPSHOT.jar
-```
+.\mvnw.cmd spring-boot:run    # Windows PowerShell
 
-Localhost: http://localhost:8082/rotas
+## 📅 Próximos Passos
 
-Endpoints principais:
-- `GET /rotas` — lista todas as rotas (JSON)
-- `GET /rotas/{id}` — retorna uma rota por id (404 se não encontrar)
+- [ ] Filtros: `?dificuldade=` e `?maxDistancia=`
+- [ ] Validação com `@Valid` + mensagens de erro
+- [ ] Adição de **15+ rotas reais** (Ponta Negra, Dunas, Via Costeira etc.)
+- [ ] Endpoint de **recomendação de rotas seguras**
+- [ ] Testes unitários e de integração
+- [ ] Deploy na nuvem
 
-O que foi corrigido e adicionado:
-- `Rota`: `id` como `String` para compatibilidade com o JSON atual.
-- `RotaRepository`: corrigido caminho do recurso para `classpath:/data/rotas.json`, tratamento explícito de IO e fechamento do stream.
-- `RotaService`: nova camada de serviço `com.suncityrun.service.RotaService` que delega para o repository.
-- `RouteController`: agora injeta `RotaService` e fornece `GET /rotas` e `GET /rotas/{id}`.
-- `GlobalExceptionHandler`: `@ControllerAdvice` para respostas JSON consistentes em erros.
-- `pom.xml`: padronizado para usar `spring-boot-starter-test` nos testes.
-- CI: workflow GitHub Actions em `.github/workflows/ci.yml` para rodar `./mvnw test package`.
-- Testes: adicionado `RouteControllerTest` usando MockMvc.
+## ✅ Status Checkpoint 1 (23/11/2025)
 
-Próximos passos recomendados:
-- Melhorar tratamento de exceções e capturar erros específicos em pontos críticos.
-- Adicionar camada de validação (`@Valid`, DTOs) e testes unitários para o service.
-- Adicionar Checkstyle/SpotBugs e integrar no CI.
+- ✔ Estrutura em camadas completa
+- ✔ API rodando localmente
+- ✔ Endpoints GET funcionando
+- ✔ Tratamento global de exceções
+- ✔ Swagger UI 100% funcional
+- ✔ JSON carregado na inicialização
