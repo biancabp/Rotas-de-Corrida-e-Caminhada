@@ -5,3 +5,27 @@ bin/
 target/ 
 .idea/ 
 *.log 
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+pom.xml.versionsBackup
+
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build
+/out/
+/bin/
