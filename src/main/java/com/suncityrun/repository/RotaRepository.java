@@ -18,28 +18,27 @@ package com.suncityrun.repository;
 
 	    private List<Rota> rotas;
 
-	    @PostConstruct
-	    public void init() {
-	        try {
-	            ObjectMapper mapper = new ObjectMapper();
-
-	            InputStream inputStream = getClass()
-	                .getResourceAsStream("/static/data/rotas.json");
-
-	            this.rotas = mapper.readValue(inputStream, new TypeReference<List<Rota>>() {});
-	        } catch (Exception e) {
-	            throw new RuntimeException("Erro ao carregar arquivo rotas.json", e);
-	        }
-	    }
-
+@PostConstruct
+public void init() {
+    ObjectMapper mapper = new ObjectMapper();
+    try (InputStream is = getClass().getResourceAsStream("/data/rotas.json")) {
+        if (is == null) {
+            throw new RuntimeException("Arquivo rotas.json não encontrado! Verifique o caminho: src/main/resources/data/rotas.json");
+        }
+        this.rotas = mapper.readValue(is, new TypeReference<List<Rota>>() {});
+        System.out.println("Carregadas " + rotas.size() + " rotas com sucesso!");
+    } catch (Exception e) {
+        throw new RuntimeException("Erro crítico ao carregar rotas.json", e);
+    }
+}
 	    public List<Rota> findAll() {
 	        return rotas;
 	    }
 
-	    public Optional<Rota> findById(String id) {
-	        return rotas.stream()
-	            .filter(r -> r.getId().equals(id))
-	            .findFirst();
-	    }
+		public Optional<Rota> findById(String id) {
+			return rotas.stream()
+				.filter(r -> java.util.Objects.equals(r.getId(), id))
+				.findFirst();
+		}
 	}
 

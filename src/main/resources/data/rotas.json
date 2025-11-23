@@ -1,14 +1,34 @@
 [
   {
-    "id": 1,
-    "nome": "Praia Vermelha",
+    "id": "1",
+    "nome": "Praia Vermelha - Urca",
     "distancia": 5.2,
-    "dificuldade": "Fácil"
+    "dificuldade": "Fácil",
+    "terreno": "Asfalto e areia",
+    "localizacao": "Rio de Janeiro - RJ"
   },
   {
-    "id": 2,
+    "id": "2",
     "nome": "Parque da Cidade",
     "distancia": 3.8,
-    "dificuldade": "Moderada"
+    "dificuldade": "Moderada",
+    "terreno": "Trilha e gramado",
+    "localizacao": "Niterói - RJ"
+  },
+  {
+    "id": "3",
+    "nome": "Aterro do Flamengo",
+    "distancia": 7.5,
+    "dificuldade": "Fácil",
+    "terreno": "Asfalto",
+    "localizacao": "Rio de Janeiro - RJ"
+  },
+  {
+    "id": "4",
+    "nome": "Pedra Bonita (trilha)",
+    "distancia": 2.4,
+    "dificuldade": "Difícil",
+    "terreno": "Trilha íngreme",
+    "localizacao": "Rio de Janeiro - RJ"
   }
 ]
