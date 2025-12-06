@@ -1,34 +1,50 @@
 [
   {
     "id": "1",
-    "nome": "Praia Vermelha - Urca",
-    "distancia": 5.2,
-    "dificuldade": "Fácil",
-    "terreno": "Asfalto e areia",
-    "localizacao": "Rio de Janeiro - RJ"
+    "nome": "Via Costeira – Orla e Ciclovia",
+    "distancia": 7.5,
+    "dificuldade": "Moderada",
+    "terreno": "Asfalto",
+    "localizacao": "Natal - RN"
   },
   {
     "id": "2",
-    "nome": "Parque da Cidade",
-    "distancia": 3.8,
-    "dificuldade": "Moderada",
-    "terreno": "Trilha e gramado",
-    "localizacao": "Niterói - RJ"
+    "nome": "Parque das Dunas – Trilha Perobinha",
+    "distancia": 1.2,
+    "dificuldade": "Fácil",
+    "terreno": "Trilha em terra batida",
+    "localizacao": "Natal - RN"
   },
   {
     "id": "3",
-    "nome": "Aterro do Flamengo",
-    "distancia": 7.5,
-    "dificuldade": "Fácil",
-    "terreno": "Asfalto",
-    "localizacao": "Rio de Janeiro - RJ"
+    "nome": "Parque das Dunas – Trilha da Ubaia Doce",
+    "distancia": 4.4,
+    "dificuldade": "Moderada",
+    "terreno": "Trilha na mata",
+    "localizacao": "Natal - RN"
   },
   {
     "id": "4",
-    "nome": "Pedra Bonita (trilha)",
-    "distancia": 2.4,
-    "dificuldade": "Difícil",
-    "terreno": "Trilha íngreme",
-    "localizacao": "Rio de Janeiro - RJ"
+    "nome": "Ponta Negra – Calçadão da Praia",
+    "distancia": 3.0,
+    "dificuldade": "Fácil",
+    "terreno": "Calçadão e areia compacta",
+    "localizacao": "Natal - RN"
+  },
+  {
+    "id": "5",
+    "nome": "Parque da Cidade – Pista de Caminhada",
+    "distancia": 2.5,
+    "dificuldade": "Fácil",
+    "terreno": "Asfalto e piso ecológico",
+    "localizacao": "Natal - RN"
+  },
+  {
+    "id": "6",
+    "nome": "UFRN – Voltinha da Atleta",
+    "distancia": 5.0,
+    "dificuldade": "Moderada",
+    "terreno": "Asfalto",
+    "localizacao": "Natal - RN"
   }
 ]
