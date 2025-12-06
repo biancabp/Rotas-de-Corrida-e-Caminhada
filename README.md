@@ -38,10 +38,10 @@ com.suncityrun
 
 ## 📅 Próximos Passos
 
-- [ ] Filtros: `?dificuldade=` e `?maxDistancia=`
-- [ ] Validação com `@Valid` + mensagens de erro
+- [x] Filtros: `?dificuldade=` e `?maxDistancia=`
+- [x] Validação com `@Valid` + mensagens de erro
 - [ ] Adição de **15+ rotas reais** (Ponta Negra, Dunas, Via Costeira etc.)
-- [ ] Endpoint de **recomendação de rotas seguras**
+- [x] Endpoint de **recomendação de rotas seguras**
 - [ ] Testes unitários e de integração
 - [ ] Deploy na nuvem
 

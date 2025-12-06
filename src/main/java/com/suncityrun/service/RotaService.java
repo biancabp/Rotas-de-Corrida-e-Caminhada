@@ -109,7 +109,7 @@ public class RotaService {
     }
 
     // Retorna rotas "seguras" (ex: dificuldade fácil e terreno corrida)
-public List<Rota> recomendarRotasSeguras() {
+   public List<Rota> recomendarRotasSeguras() {
     return rotaRepository.findAll()
             .stream()
             .filter(r -> "facil".equalsIgnoreCase(r.getDificuldade()))
