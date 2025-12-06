@@ -5,12 +5,16 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.suncityrun.model.Rota;
 import com.suncityrun.service.RotaService;
+
 
     @RestController
     @RequestMapping("/rotas")
@@ -48,5 +52,10 @@ import com.suncityrun.service.RotaService;
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+    @PostMapping
+    public ResponseEntity<Rota> criarRota(
+        @Valid @RequestBody Rota rota) {
+    return ResponseEntity.ok(rota);
+}
 
 }
