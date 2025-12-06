@@ -24,4 +24,24 @@ public class RotaService {
     public Optional<Rota> findById(String id) {
         return rotaRepository.findById(id);
     }
+
+    public List<Rota> findByDificuldade(String dificuldade) {
+    return rotaRepository.findAll().stream()
+            .filter(r -> r.getDificuldade() != null &&
+                         r.getDificuldade().equalsIgnoreCase(dificuldade))
+            .toList();
+}
+
+    public List<Rota> findByDistancia(Double min, Double max) {
+    return rotaRepository.findAll().stream()
+        .filter(r -> {
+            double d = r.getDistancia();
+
+            boolean maiorQueMin = (min == null) || d >= min;
+            boolean menorQueMax = (max == null) || d <= max;
+
+            return maiorQueMin && menorQueMax;
+        })
+        .toList();
+    }
 }
